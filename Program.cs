@@ -14,6 +14,9 @@ Console.WriteLine("valor de a: "+a);
 Console.WriteLine("valor de b: "+b);
 */
 
+//Ejercicio 1
+
+/*
 int numeroEntero;
 string numero;
 
@@ -42,3 +45,77 @@ if (numeroEntero > 0)
 {
     Console.WriteLine($"El numero ingresado debe ser mayor a 0 para ser invertido");
 }
+*/
+
+string opcion, a, b;
+int opcionEntera = 0;
+float numeroAEntero, numeroBEntero, resultado;
+
+do
+{
+    Console.WriteLine("Ingrese \"1\" para sumar");
+    Console.WriteLine("Ingrese \"2\" para restar");
+    Console.WriteLine("Ingrese \"3\" para multiplicar");
+    Console.WriteLine("Ingrese \"4\" para dividir");
+
+
+    opcion = Console.ReadLine();
+    opcionEntera = int.Parse(opcion);
+
+    switch (opcionEntera)
+    {
+        case 1:
+            Console.WriteLine("Ingrese un numero:");
+            a = Console.ReadLine();
+            Console.WriteLine("Ingrese otro numero:");
+            b = Console.ReadLine();
+            numeroAEntero = float.Parse(a);
+            numeroBEntero = float.Parse(b);
+            resultado = numeroAEntero + numeroBEntero;
+            Console.WriteLine($"Resultado: {resultado}");
+            break;
+
+        case 2:
+            Console.WriteLine("Ingrese un numero:");
+            a = Console.ReadLine();
+            Console.WriteLine("Ingrese otro numero:");
+            b = Console.ReadLine();
+            numeroAEntero = float.Parse(a);
+            numeroBEntero = float.Parse(b);
+            resultado = numeroAEntero - numeroBEntero;
+            Console.WriteLine($"Resultado: {resultado}");
+            break;
+
+        case 3:
+            Console.WriteLine("Ingrese un numero:");
+            a = Console.ReadLine();
+            Console.WriteLine("Ingrese otro numero:");
+            b = Console.ReadLine();
+            numeroAEntero = float.Parse(a);
+            numeroBEntero = float.Parse(b);
+            resultado = numeroAEntero * numeroBEntero;
+            Console.WriteLine($"Resultado: {resultado}");
+            break;
+
+        case 4:
+            Console.WriteLine("Ingrese un numero:");
+            a = Console.ReadLine();
+            numeroAEntero = float.Parse(a);
+            do
+            {
+                Console.WriteLine("Ingrese otro numero:");
+                b = Console.ReadLine();
+                numeroBEntero = float.Parse(b);
+            } while (numeroBEntero == 0);
+            resultado = numeroAEntero / numeroBEntero;
+            Console.WriteLine($"Resultado: {resultado}");
+            break;
+
+        default:
+            Console.WriteLine("No se ingreso una opcion valida");
+            break;    
+    }
+    Console.WriteLine("Ingrese \"1\" para realizar otra operacion o \"0\" para salir: ");
+    opcion = Console.ReadLine();
+    opcionEntera = int.Parse(opcion);
+} while (opcionEntera != 0);
