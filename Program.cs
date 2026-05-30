@@ -14,6 +14,9 @@ Console.WriteLine("valor de a: "+a);
 Console.WriteLine("valor de b: "+b);
 */
 
+
+//______________________EJERCICIO 1____________________
+/*
 int numeroEntero;
 string numero;
 
@@ -42,3 +45,5 @@ if (numeroEntero > 0)
 {
     Console.WriteLine($"El numero ingresado debe ser mayor a 0 para ser invertido");
 }
+*/
+
