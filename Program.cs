@@ -49,7 +49,7 @@ if (numeroEntero > 0)
 
 string opcion, a, b;
 int opcionEntera = 0;
-float numeroAEntero, numeroBEntero, resultado;
+float numeroAFlotante, numeroBFlotante, resultado;
 
 do
 {
@@ -57,6 +57,7 @@ do
     Console.WriteLine("Ingrese \"2\" para restar");
     Console.WriteLine("Ingrese \"3\" para multiplicar");
     Console.WriteLine("Ingrese \"4\" para dividir");
+    Console.WriteLine("Ingrese \"5\" para usar la nueva funcion de CalculadoraV2");
 
 
     opcion = Console.ReadLine();
@@ -69,9 +70,9 @@ do
             a = Console.ReadLine();
             Console.WriteLine("Ingrese otro numero:");
             b = Console.ReadLine();
-            numeroAEntero = float.Parse(a);
-            numeroBEntero = float.Parse(b);
-            resultado = numeroAEntero + numeroBEntero;
+            numeroAFlotante = float.Parse(a);
+            numeroBFlotante = float.Parse(b);
+            resultado = numeroAFlotante + numeroBFlotante;
             Console.WriteLine($"Resultado: {resultado}");
             break;
 
@@ -80,9 +81,9 @@ do
             a = Console.ReadLine();
             Console.WriteLine("Ingrese otro numero:");
             b = Console.ReadLine();
-            numeroAEntero = float.Parse(a);
-            numeroBEntero = float.Parse(b);
-            resultado = numeroAEntero - numeroBEntero;
+            numeroAFlotante = float.Parse(a);
+            numeroBFlotante = float.Parse(b);
+            resultado = numeroAFlotante - numeroBFlotante;
             Console.WriteLine($"Resultado: {resultado}");
             break;
 
@@ -91,24 +92,72 @@ do
             a = Console.ReadLine();
             Console.WriteLine("Ingrese otro numero:");
             b = Console.ReadLine();
-            numeroAEntero = float.Parse(a);
-            numeroBEntero = float.Parse(b);
-            resultado = numeroAEntero * numeroBEntero;
+            numeroAFlotante = float.Parse(a);
+            numeroBFlotante = float.Parse(b);
+            resultado = numeroAFlotante * numeroBFlotante;
             Console.WriteLine($"Resultado: {resultado}");
             break;
 
         case 4:
             Console.WriteLine("Ingrese un numero:");
             a = Console.ReadLine();
-            numeroAEntero = float.Parse(a);
+            numeroAFlotante = float.Parse(a);
             do
             {
                 Console.WriteLine("Ingrese otro numero:");
                 b = Console.ReadLine();
-                numeroBEntero = float.Parse(b);
-            } while (numeroBEntero == 0);
-            resultado = numeroAEntero / numeroBEntero;
+                numeroBFlotante = float.Parse(b);
+            } while (numeroBFlotante == 0);
+            resultado = numeroAFlotante / numeroBFlotante;
             Console.WriteLine($"Resultado: {resultado}");
+            break;
+
+        case 5:
+            do
+            {
+                Console.WriteLine("Ingrese un numero:");
+                a = Console.ReadLine();
+            } while (!(float.TryParse(a, out numeroAFlotante)));
+
+            Console.WriteLine("Valor absoluto: {0}", Math.Abs(numeroAFlotante));
+            Console.WriteLine("Cuadrado: {0}", Math.Pow(numeroAFlotante, 2));
+            if (numeroAFlotante < 0)
+            {
+                Console.WriteLine("Raiz cuadrada: No se puede calcular");
+            } else
+            {
+                Console.WriteLine("Raiz cuadrada: {0}", Math.Sqrt(numeroAFlotante));
+            }
+            Console.WriteLine("Seno: {0}", Math.Sin(numeroAFlotante));
+            Console.WriteLine("Coseno: {0}", Math.Cos(numeroAFlotante));
+            Console.WriteLine("Parte entera: {0}", (int)Math.Truncate(numeroAFlotante));
+
+            do
+            {
+                Console.WriteLine("Ingrese un numero A:");
+                a = Console.ReadLine();
+            } while (!(float.TryParse(a, out numeroAFlotante)));
+
+            do
+            {
+                Console.WriteLine("Ingrese un numero B:");
+                b = Console.ReadLine();
+            } while (!(float.TryParse(b, out numeroBFlotante)));
+
+            if (numeroAFlotante > numeroBFlotante)
+            {
+                Console.WriteLine("Maximo entre los dos numeros: {0}", numeroAFlotante);
+                Console.WriteLine("Minimo entre los dos numeros: {0}", numeroBFlotante);
+            } else if (numeroBFlotante > numeroAFlotante)
+            {
+                Console.WriteLine("Maximo entre los dos numeros: {0}", numeroBFlotante);
+                Console.WriteLine("Minimo entre los dos numeros: {0}", numeroAFlotante);
+            } else
+            {
+                Console.WriteLine("Maximo entre los dos numeros: {0}", numeroBFlotante);
+                Console.WriteLine("Minimo entre los dos numeros: {0}", numeroAFlotante);
+            }
+
             break;
 
         default:
