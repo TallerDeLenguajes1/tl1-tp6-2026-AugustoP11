@@ -47,3 +47,28 @@ if (numeroEntero > 0)
 }
 */
 
+//______________Ejercicio 4___________________
+
+//Obtener la longitud de una cadena y mostrar por pantalla
+Console.WriteLine("Ingrese una cadena:");
+string primeraCadenaIngresada = Console.ReadLine().ToString();
+Console.WriteLine($"Longitud de cadena ingresada: {primeraCadenaIngresada.Length}");
+
+//A partir de una segunda cadena ingresada por el usuario, concatene ambas cadenas distintas.
+Console.WriteLine("Ingrese otra cadena:");
+string segundaCadenaIngresada = Console.ReadLine().ToString();
+string cadenasConcatenadas = string.Concat(primeraCadenaIngresada, segundaCadenaIngresada);
+Console.WriteLine($"Cadena concatenada: {cadenasConcatenadas}");
+
+//Extraer una subcadena de la cadena ingresada.
+int longitudCadenasConcatenadas = cadenasConcatenadas.Length;
+int indice;
+do
+{
+    do
+    {
+        Console.WriteLine("Ingrese un indice (entero) a partir del cual extraer una subcadena:");
+        indice = Console.Read();
+    } while (!int.TryParse);
+
+} while (longitudCadenasConcatenadas);
