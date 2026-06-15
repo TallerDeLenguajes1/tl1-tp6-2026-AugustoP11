@@ -74,4 +74,36 @@ do
 string subcadena = cadenasConcatenadas.Substring(indiceEntero);
 Console.WriteLine($"Subcadena obtenida: {subcadena}");
 
-//Utilizando la calculadora creada anteriormente realizar las operaciones de dos números y mostrar por pantalla y mostrar en texto el resultado. Por ejemplo para la suma sería: "la suma de " num1 " y de " num2 " es igual a: " resultado.
+//Recorrer la cadena de texto con un ciclo Foreach e ir mostrando elemento por elemento en pantalla
+foreach (var elemento in cadenasConcatenadas)
+{
+    Console.WriteLine($"{elemento}");
+}
+
+//Buscar la ocurrencia de una palabra determinada en la cadena ingresada
+Console.WriteLine("Ingrese una subcadena para encontrar su ocurrencia:");
+subcadena = Console.ReadLine().ToString();
+indiceEntero = cadenasConcatenadas.IndexOf(subcadena);
+
+if (indiceEntero >= 0)
+{
+    Console.WriteLine($"Ocurrencia en la posicion: {indiceEntero}.");
+} else
+{
+    Console.WriteLine("No hay ocurrencias.");
+}
+
+//Convierta la cadena a mayúsculas y luego a minúsculas.
+string cadenasMayusculas = cadenasConcatenadas.ToUpper();
+string cadenasMinusculas = cadenasConcatenadas.ToLower();
+
+Console.WriteLine($"Cadenas concatenadas en mayusculas: {cadenasMayusculas}");
+Console.WriteLine($"Cadenas concatenadas en minusculas: {cadenasMinusculas}");
+
+//Ingrese una cadena separada por caracteres que usted determine y muestre por pantalla los resultados (Revisar el comportamiento de split())
+string cadenaCompleta = "Juan;Perez;30;12345678";
+string[] cadenaSeparada = cadenaCompleta.Split(';');
+foreach (var elemento in cadenaSeparada)
+{
+    Console.WriteLine($"{elemento}");
+}
