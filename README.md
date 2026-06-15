@@ -12,14 +12,25 @@ Algo importante que también debemos saber sobre el comportamiento del tipo stri
 
 #### ¿Qué secuencias de escape tiene el tipo string?
 
-Secuencia | Descripción |
---- | --- |
-\n | Nueva línea (Newline): Salto de línea.
-\t | Tabulador horizontal: Añade un espacio de tabulación.
-\\" | Comilla doble: Permite poner comillas dentro del string.
-\\\ | Barra invertida: Permite escribir el carácter \ sin que evalúe un escape.
-\\' | Comilla simple: Utilizado principalmente en caracteres (char).
-\uXXXX | Carácter Unicode: Inserta un símbolo mediante su código hexadecimal de 4 dígitos.
+Secuencia de escape	| Nombre de carácter | Codificación Unicode
+--- | --- | --- |
+\\' | Comilla simple | 0x0027
+\\" | Comilla doble | 0x0022
+\\ | Barra invertida | 0x005C
+\0 | Nulo | 0x0000
+\a | Alerta | 0x0007
+\b | Retroceso | 0x0008
+\e | Escapar | 0x001B
+\f | Avance de página | 0x000C
+\n | Nueva línea | 0x000A
+\r | Retorno de carro | 0x000D
+\t | Tabulación horizontal | 0x0009
+\v | Tabulación vertical | 0x000B
+\u | Secuencia de escape Unicode (UTF-16) | \uHHHH (intervalo: 0000 - FFFF; ejemplo: \u00E7 = "ç")
+\U | Secuencia de escape Unicode (UTF-32) | \U00HHHHHH (intervalo: 000000 - 10FFFF; ejemplo: \U0001F47D = "👽")
+\x | Secuencia de escape Unicode similar a "\u" excepto con longitud variable | \xH[H][H][H] (intervalo: 0 - FFFF; ejemplo: \x00E7 or \x0E7 or \xE7 = "ç")
+
+Fuente: <a href="https://learn.microsoft.com/es-es/dotnet/csharp/programming-guide/strings/">Cadenas - C#</a>
 
 #### ¿Qué sucede cuando utiliza el carácter @ y $ antes de una cadena de texto?
 
