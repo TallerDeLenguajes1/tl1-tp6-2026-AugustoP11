@@ -62,13 +62,16 @@ Console.WriteLine($"Cadena concatenada: {cadenasConcatenadas}");
 
 //Extraer una subcadena de la cadena ingresada.
 int longitudCadenasConcatenadas = cadenasConcatenadas.Length;
-int indice;
+string indice;
+int indiceEntero;
 do
 {
-    do
-    {
-        Console.WriteLine("Ingrese un indice (entero) a partir del cual extraer una subcadena:");
-        indice = Console.Read();
-    } while (!int.TryParse);
+    Console.WriteLine("Ingrese un indice (entero) a partir del cual extraer una subcadena:");
+    indice = Console.ReadLine();
+    indiceEntero = int.Parse(indice);
+} while (longitudCadenasConcatenadas < indiceEntero);
 
-} while (longitudCadenasConcatenadas);
+string subcadena = cadenasConcatenadas.Substring(indiceEntero);
+Console.WriteLine($"Subcadena obtenida: {subcadena}");
+
+//Utilizando la calculadora creada anteriormente realizar las operaciones de dos números y mostrar por pantalla y mostrar en texto el resultado. Por ejemplo para la suma sería: "la suma de " num1 " y de " num2 " es igual a: " resultado.
